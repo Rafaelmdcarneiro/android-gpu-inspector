@@ -1,0 +1,73 @@
+# Copyright (C) 2018 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+load("//tools/build:rules.bzl", "copy_to")
+
+filegroup(
+    name = "source",
+    srcs = glob([
+        "java/com/google/android/gapid/*.java",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
+android_library(
+    name = "gapid",
+    srcs = [":source"],
+    custom_package = "com.google.android.gapid",
+    manifest = "//tools/build/rules:AndroidManifest.xml",
+    resource_files = [
+        ":logo_resource",
+        ":layout_resource",
+        ":value_resource",
+        ":drawable_resource",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+copy_to(
+    name = "logo_resource",
+    srcs = [
+        "//tools/logo:logo_256.png",
+    ],
+    rename = {
+        "logo_256.png": "logo.png",
+    },
+    to = "res/drawable-xxxhdpi",
+)
+
+copy_to(
+    name = "layout_resource",
+    srcs = [
+        "//gapidapk/android/app/src/main/res/layout:replayer_main.xml",
+    ],
+    to = "res/layout",
+)
+
+copy_to(
+    name = "value_resource",
+    srcs = [
+        "//gapidapk/android/app/src/main/res/values:colors.xml",
+        "//gapidapk/android/app/src/main/res/values:strings.xml",
+    ],
+    to = "res/values",
+)
+
+copy_to(
+    name = "drawable_resource",
+    srcs = [
+        "//tools/logo:logo.xml",
+    ],
+    to = "res/drawable",
+)

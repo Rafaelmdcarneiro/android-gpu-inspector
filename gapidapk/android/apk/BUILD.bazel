@@ -1,0 +1,55 @@
+# Copyright (C) 2018 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+load(":rules.bzl", "gapid_apk")
+
+_NATIVE_LIBRARIES = {
+    "deviceinfo": "//core/os/device/deviceinfo/apk",
+    "VkLayer_VirtualSwapchain": "//core/vulkan/vk_virtual_swapchain/apk",
+    "VkLayer_CPUTiming": "//core/vulkan/vk_api_timing_layer/apk",
+    "VkLayer_DebugMarker": "//core/vulkan/vk_debug_marker_layer/apk",
+    "VkLayer_MemoryTracker": "//core/vulkan/vk_memory_tracker_layer/apk",
+    "gapii": "//gapii/apk",
+    "VkLayer_GraphicsSpy": "//gapii/apk",
+    "gapir": "//cmd/gapir/apk",
+    "vulkan_sample": "//cmd/vulkan_sample/apk",
+}
+
+_NATIVE_BINARIES = {
+    "agi_launch_producer": "//cmd/launch_producer",
+}
+
+gapid_apk(
+    name = "armeabi-v7a",
+    abi = "armeabi-v7a",
+    bins = _NATIVE_BINARIES,
+    libs = _NATIVE_LIBRARIES,
+    pkg = "armeabiv7a",
+)
+
+gapid_apk(
+    name = "arm64-v8a",
+    abi = "arm64-v8a",
+    bins = _NATIVE_BINARIES,
+    libs = _NATIVE_LIBRARIES,
+    pkg = "arm64v8a",
+)
+
+gapid_apk(
+    name = "x86",
+    abi = "x86",
+    bins = _NATIVE_BINARIES,
+    libs = _NATIVE_LIBRARIES,
+    pkg = "x86",
+)
