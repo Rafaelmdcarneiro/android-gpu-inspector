@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>English</string>
+  <key>CFBundleExecutable</key>
+  <string>agi</string>
+  <key>CFBundleIconFile</key>
+  <string>AGI.icns</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>CFBundleName</key>
+  <string>AGI</string>
+  <key>CFBundleDisplayName</key>
+  <string>Android GPU Inspector</string>
+  <key>CFBundleIdentifier</key>
+  <string>com.google.agi</string>
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6</string>
+  <key>NSHumanReadableCopyright</key>
+  <string>Copyright © 2017 Google Inc.</string>
+  <key>LSApplicationCategoryType</key>
+  <string>public.app-category.developer-tools</string>
+  <key>CFBundleDocumentTypes</key>
+  <array>
+   <dict>
+    <key>CFBundleTypeExtensions</key>
+    <array>
+     <string>gfxtrace</string>
+    </array>
+    <key>CFBundleTypeIconFile</key>
+    <string>AGI.icns</string>
+    <key>CFBundleTypeName</key>
+    <string>Graphics API Trace</string>
+    <key>CFBundleTypeRole</key>
+    <string>Editor</string>
+    <key>LSHandlerRank</key>
+    <string>Owner</string>
+   </dict>
+    <dict>
+    <key>CFBundleTypeExtensions</key>
+    <array>
+     <string>perfetto</string>
+    </array>
+    <key>CFBundleTypeIconFile</key>
+    <string>AGI.icns</string>
+    <key>CFBundleTypeName</key>
+    <string>System Profile Trace</string>
+    <key>CFBundleTypeRole</key>
+    <string>Editor</string>
+    <key>LSHandlerRank</key>
+    <string>Owner</string>
+   </dict>
+  </array>
+ </dict>
+</plist>

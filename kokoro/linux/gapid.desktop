@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Android GPU Inspector
+Comment=Android GPU Inspector
+Categories=Development;Debugger;Graphics;3DGraphics
+Icon=/opt/agi/icon.png
+Exec=/opt/agi/agi %f
+Terminal=false
+MimeType=application/x-gfxtrace;application/x-perfetto
